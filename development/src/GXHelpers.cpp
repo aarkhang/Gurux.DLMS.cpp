@@ -1845,7 +1845,7 @@ static int SetTime(CGXDLMSSettings* settings, CGXByteBuffer& buff, CGXDLMSVarian
 {
     DATETIME_SKIPS skip = value.dateTime.GetSkip();
     struct tm dt = value.dateTime.GetValue();
-    if (settings->GetDateTimeSkips() != DATETIME_SKIPS_NONE)
+    if (settings != nullptr && settings->GetDateTimeSkips() != DATETIME_SKIPS_NONE)
     {
         skip = (DATETIME_SKIPS)(skip | settings->GetDateTimeSkips());
     }
@@ -1898,7 +1898,7 @@ static int SetDate(CGXDLMSSettings* settings, CGXByteBuffer& buff, CGXDLMSVarian
 {
     struct tm dt = value.dateTime.GetValue();
     DATETIME_SKIPS skip = value.dateTime.GetSkip();
-    if (settings->GetDateTimeSkips() != DATETIME_SKIPS_NONE)
+    if (settings != nullptr && settings->GetDateTimeSkips() != DATETIME_SKIPS_NONE)
     {
         skip = (DATETIME_SKIPS)(skip | settings->GetDateTimeSkips());
     }
@@ -1977,7 +1977,7 @@ static int SetDateTime(CGXDLMSSettings* settings, CGXByteBuffer& buff, CGXDLMSVa
     unsigned short year = 0xFFFF;
     struct tm dt = value.dateTime.GetValue();
     DATETIME_SKIPS skip = value.dateTime.GetSkip();
-    if (settings->GetDateTimeSkips() != DATETIME_SKIPS_NONE)
+    if (settings != nullptr && settings->GetDateTimeSkips() != DATETIME_SKIPS_NONE)
     {
         skip = (DATETIME_SKIPS) (skip | settings->GetDateTimeSkips());
     }
