@@ -235,3 +235,8 @@ GuruxDLMSServerExample/VS/data.csv
 *.manifest
 *.zip
 GuruxDLMSClientExample/VS/DvlErrLog.txt
+
+.vscode/
+.vs/
+build*/
+_build*/
