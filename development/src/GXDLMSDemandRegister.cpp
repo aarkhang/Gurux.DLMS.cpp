@@ -136,7 +136,7 @@ CGXDateTime& CGXDLMSDemandRegister::GetStartTimeCurrent()
 {
     return m_StartTimeCurrent;
 }
-void CGXDLMSDemandRegister::SetStartTimeCurrent(CGXDateTime& value)
+void CGXDLMSDemandRegister::SetStartTimeCurrent(const CGXDateTime& value)
 {
     m_StartTimeCurrent = value;
 }

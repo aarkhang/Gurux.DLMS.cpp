@@ -52,12 +52,12 @@ public:
     /**
      Constructor.
     */
-    CGXDLMSSeasonProfile(std::string name, CGXDateTime& start, std::string weekName);
+    CGXDLMSSeasonProfile(std::string name, const CGXDateTime& start, std::string weekName);
 
     /**
      Constructor.
     */
-    CGXDLMSSeasonProfile(CGXByteBuffer& name, CGXDateTime& start, CGXByteBuffer weekName);
+    CGXDLMSSeasonProfile(CGXByteBuffer& name, const CGXDateTime& start, CGXByteBuffer weekName);
 
     /**
      Name of season profile.

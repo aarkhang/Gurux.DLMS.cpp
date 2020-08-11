@@ -118,7 +118,7 @@ public:
      Current start time of COSEM Register object.
     */
     CGXDateTime& GetStartTimeCurrent();
-    void SetStartTimeCurrent(CGXDateTime& value);
+    void SetStartTimeCurrent(const CGXDateTime& value);
 
     unsigned long GetPeriod();
     void SetPeriod(unsigned long value);
