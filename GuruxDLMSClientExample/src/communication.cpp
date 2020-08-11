@@ -172,8 +172,8 @@ int CGXCommunication::Connect(const char* pAddress, unsigned short Port)
     }
     sockaddr* add;
     int addSize;
-    sockaddr_in6 addrIP6;
-    sockaddr_in addIP4;
+    sockaddr_in6 addrIP6 = { 0 };
+    sockaddr_in addIP4 = { 0 };
     if (family == AF_INET)
     {
         addIP4.sin_port = htons(Port);
@@ -194,9 +194,9 @@ int CGXCommunication::Connect(const char* pAddress, unsigned short Port)
                 return err;
             };
             addIP4.sin_addr = *(in_addr*)(void*)Hostent->h_addr_list[0];
-            add = (sockaddr*)&addIP4;
-            addSize = sizeof(sockaddr_in);
-        };
+        }
+        add = (sockaddr*)&addIP4;
+        addSize = sizeof(sockaddr_in);
     }
     else
     {
